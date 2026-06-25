@@ -153,6 +153,16 @@ img {
   align-items: start;
 }
 
+.home-intro {
+  display: block;
+}
+
+.section-copy-center {
+  max-width: 760px;
+  margin: 0 auto;
+  text-align: center;
+}
+
 .page-hero-grid {
   grid-template-columns: 1.1fr 0.9fr;
   align-items: start;
