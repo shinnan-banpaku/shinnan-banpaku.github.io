@@ -1,0 +1,472 @@
+:root {
+  --bg: #eef4fb;
+  --bg-alt: #f7fbff;
+  --surface: rgba(255, 255, 255, 0.86);
+  --surface-strong: #ffffff;
+  --ink: #173154;
+  --muted: #5b6f8f;
+  --line: rgba(23, 49, 84, 0.12);
+  --blue: #245ea8;
+  --blue-deep: #143d78;
+  --green: #74a83b;
+  --green-deep: #476d21;
+  --sky: #cfe4fb;
+  --shadow: 0 24px 60px rgba(18, 51, 92, 0.12);
+  --radius-xl: 32px;
+  --radius-lg: 24px;
+  --radius-md: 18px;
+  --content: 1180px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: "BIZ UDPGothic", "Yu Gothic", "Hiragino Kaku Gothic ProN", sans-serif;
+  color: var(--ink);
+  background:
+    radial-gradient(circle at top left, rgba(116, 168, 59, 0.14), transparent 24rem),
+    radial-gradient(circle at top right, rgba(36, 94, 168, 0.12), transparent 24rem),
+    linear-gradient(180deg, var(--bg-alt) 0%, var(--bg) 100%);
+  line-height: 1.75;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+.wrap {
+  width: min(calc(100% - 40px), var(--content));
+  margin: 0 auto;
+}
+
+.site-shell {
+  min-height: 100vh;
+}
+
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  backdrop-filter: blur(18px);
+  background: rgba(247, 251, 255, 0.88);
+  border-bottom: 1px solid rgba(20, 61, 120, 0.08);
+}
+
+.topbar-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  padding: 14px 0;
+}
+
+.brand {
+  font-family: "Yu Mincho", "Hiragino Mincho ProN", "MS PMincho", serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+}
+
+.year-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.tab {
+  padding: 10px 16px;
+  border-radius: 999px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--blue-deep);
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(20, 61, 120, 0.12);
+  transition: transform 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.tab:hover,
+.tab:focus-visible {
+  transform: translateY(-1px);
+  background: #ffffff;
+  border-color: rgba(20, 61, 120, 0.24);
+  outline: none;
+}
+
+.tab.is-active {
+  color: #ffffff;
+  background: linear-gradient(135deg, var(--blue-deep), var(--blue));
+  border-color: transparent;
+}
+
+.hero,
+.page-hero,
+.section {
+  padding: 34px 0;
+}
+
+.hero-home {
+  padding-top: 24px;
+}
+
+.hero-image-card {
+  margin: 0;
+  overflow: hidden;
+  border-radius: 34px;
+  background: #ffffff;
+  box-shadow: var(--shadow);
+  border: 1px solid rgba(20, 61, 120, 0.08);
+}
+
+.hero-image-card img {
+  width: 100%;
+  height: auto;
+}
+
+.intro-layout,
+.page-hero-grid,
+.content-grid,
+.media-grid,
+.portal-grid {
+  display: grid;
+  gap: 24px;
+}
+
+.intro-layout {
+  grid-template-columns: 1.15fr 0.85fr;
+  align-items: start;
+}
+
+.page-hero-grid {
+  grid-template-columns: 1.1fr 0.9fr;
+  align-items: start;
+}
+
+.portal-grid,
+.content-grid,
+.media-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.kicker {
+  margin: 0 0 10px;
+  font-size: 0.84rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--blue);
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+  font-family: "Yu Mincho", "Hiragino Mincho ProN", "MS PMincho", serif;
+  line-height: 1.18;
+}
+
+h1 {
+  font-size: clamp(2.4rem, 5vw, 4.4rem);
+}
+
+h2 {
+  font-size: clamp(1.8rem, 3vw, 2.7rem);
+}
+
+h3 {
+  font-size: clamp(1.3rem, 2.4vw, 2rem);
+}
+
+.lead,
+.section-text {
+  color: var(--muted);
+  font-size: 1.02rem;
+}
+
+.summary-card,
+.impact-card,
+.portal-card,
+.panel,
+.media-card,
+.doc-card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow);
+}
+
+.summary-card,
+.impact-card,
+.panel {
+  padding: 28px;
+  border-radius: var(--radius-xl);
+}
+
+.summary-card h2,
+.impact-card h2 {
+  margin-bottom: 16px;
+  font-size: 1.3rem;
+}
+
+.summary-list,
+.point-list {
+  margin: 0;
+  padding-left: 20px;
+  color: var(--muted);
+}
+
+.summary-list li,
+.point-list li {
+  margin-bottom: 10px;
+}
+
+.summary-list li:last-child,
+.point-list li:last-child {
+  margin-bottom: 0;
+}
+
+.portal-card {
+  padding: 30px;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  position: relative;
+}
+
+.portal-r7 {
+  background:
+    linear-gradient(160deg, rgba(20, 61, 120, 0.92), rgba(64, 108, 160, 0.88)),
+    var(--surface-strong);
+  color: #ffffff;
+}
+
+.portal-r8 {
+  background:
+    linear-gradient(160deg, rgba(71, 109, 33, 0.94), rgba(36, 94, 168, 0.88)),
+    var(--surface-strong);
+  color: #ffffff;
+}
+
+.card-year {
+  margin: 0 0 10px;
+  font-size: 0.86rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.portal-card p {
+  color: rgba(255, 255, 255, 0.88);
+}
+
+.tag-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 22px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.tag-row li {
+  padding: 8px 12px;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  background: rgba(255, 255, 255, 0.14);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.button-link {
+  display: inline-flex;
+  margin-top: 24px;
+  padding: 12px 18px;
+  border-radius: 999px;
+  font-weight: 800;
+  color: var(--blue-deep);
+  background: #ffffff;
+}
+
+.impact-list {
+  display: grid;
+  gap: 16px;
+  margin: 0;
+}
+
+.impact-list div {
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--line);
+}
+
+.impact-list div:last-child {
+  padding-bottom: 0;
+  border-bottom: 0;
+}
+
+.impact-list dt {
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--blue);
+}
+
+.impact-list dd {
+  margin: 6px 0 0;
+  color: var(--ink);
+  font-weight: 700;
+}
+
+.section-head {
+  margin-bottom: 24px;
+}
+
+.timeline {
+  display: grid;
+  gap: 16px;
+  margin-top: 18px;
+}
+
+.timeline-item {
+  padding: 18px 18px 18px 20px;
+  border-radius: var(--radius-lg);
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid rgba(20, 61, 120, 0.08);
+}
+
+.timeline-item strong {
+  display: block;
+  margin-bottom: 6px;
+  color: var(--blue-deep);
+}
+
+.timeline-item p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.media-card {
+  overflow: hidden;
+  border-radius: var(--radius-xl);
+}
+
+.media-card figure {
+  margin: 0;
+}
+
+.media-card img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  object-position: center top;
+}
+
+.media-copy {
+  padding: 22px;
+}
+
+.media-copy p {
+  margin: 10px 0 0;
+  color: var(--muted);
+}
+
+.doc-grid {
+  display: grid;
+  gap: 18px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.doc-card {
+  display: block;
+  padding: 24px;
+  border-radius: var(--radius-lg);
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.doc-card:hover,
+.doc-card:focus-visible {
+  transform: translateY(-2px);
+  border-color: rgba(20, 61, 120, 0.22);
+  outline: none;
+}
+
+.doc-card strong {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 1.04rem;
+}
+
+.doc-card span {
+  color: var(--muted);
+}
+
+.site-footer {
+  padding: 30px 0 44px;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.theme-r7 .page-hero {
+  background:
+    radial-gradient(circle at top left, rgba(20, 61, 120, 0.12), transparent 30rem),
+    linear-gradient(180deg, rgba(210, 225, 244, 0.55), transparent);
+}
+
+.theme-r8 .page-hero {
+  background:
+    radial-gradient(circle at top left, rgba(116, 168, 59, 0.15), transparent 28rem),
+    linear-gradient(180deg, rgba(214, 239, 197, 0.4), transparent);
+}
+
+@media (max-width: 980px) {
+  .topbar-inner,
+  .intro-layout,
+  .page-hero-grid,
+  .portal-grid,
+  .content-grid,
+  .media-grid,
+  .doc-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .topbar-inner {
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 640px) {
+  .wrap {
+    width: min(calc(100% - 28px), var(--content));
+  }
+
+  .summary-card,
+  .impact-card,
+  .portal-card,
+  .panel,
+  .media-copy,
+  .doc-card {
+    padding: 22px;
+  }
+
+  .tab {
+    width: 100%;
+    text-align: center;
+  }
+
+  h1 {
+    font-size: 2.2rem;
+  }
+}
