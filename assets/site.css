@@ -117,6 +117,10 @@ img {
   padding: 34px 0;
 }
 
+.section-tight {
+  padding-top: 6px;
+}
+
 .hero-home {
   padding-top: 24px;
 }
