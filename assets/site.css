@@ -139,6 +139,10 @@ img {
   height: auto;
 }
 
+.page-hero-copy {
+  max-width: 960px;
+}
+
 .intro-layout,
 .page-hero-grid,
 .content-grid,
@@ -357,6 +361,12 @@ h3 {
   margin-bottom: 24px;
 }
 
+.section-head h2 + .section-text,
+.section-head h2 + p,
+.page-hero-copy h1 + .lead {
+  margin-top: 14px;
+}
+
 .timeline {
   display: grid;
   gap: 16px;
@@ -550,6 +560,12 @@ h3 {
 }
 
 @media (max-width: 980px) {
+  .hero,
+  .page-hero,
+  .section {
+    padding: 28px 0;
+  }
+
   .topbar-inner,
   .intro-layout,
   .page-hero-grid,
@@ -565,12 +581,68 @@ h3 {
     justify-content: flex-start;
     align-items: flex-start;
     flex-direction: column;
+    gap: 14px;
+  }
+
+  .hero-image-card,
+  .full-visual-card,
+  .feature-board,
+  .portal-card,
+  .panel,
+  .media-card {
+    border-radius: 24px;
+  }
+
+  .hero-image-card img,
+  .media-card img {
+    aspect-ratio: auto;
+  }
+
+  .full-visual-stack {
+    width: min(calc(100% - 20px), 1480px);
+    gap: 20px;
+  }
+
+  .full-visual-card img {
+    max-height: 72vh;
   }
 }
 
 @media (max-width: 640px) {
   .wrap {
-    width: min(calc(100% - 28px), var(--content));
+    width: min(calc(100% - 24px), var(--content));
+  }
+
+  body {
+    line-height: 1.65;
+  }
+
+  .topbar {
+    position: sticky;
+    top: 0;
+  }
+
+  .topbar-inner {
+    padding: 10px 0 12px;
+    gap: 12px;
+  }
+
+  .brand {
+    font-size: 1.15rem;
+  }
+
+  .year-tabs {
+    width: 100%;
+    flex-wrap: nowrap;
+    gap: 8px;
+    overflow-x: auto;
+    padding-bottom: 4px;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .year-tabs::-webkit-scrollbar {
+    display: none;
   }
 
   .summary-card,
@@ -578,16 +650,155 @@ h3 {
   .portal-card,
   .panel,
   .media-copy,
-  .doc-card {
-    padding: 22px;
+  .doc-card,
+  .feature-board,
+  .full-visual-card {
+    padding: 18px;
   }
 
   .tab {
-    width: 100%;
-    text-align: center;
+    width: auto;
+    flex: 0 0 auto;
+    white-space: nowrap;
+    padding: 10px 14px;
+    font-size: 0.88rem;
   }
 
   h1 {
-    font-size: 2.2rem;
+    font-size: 2rem;
+    line-height: 1.14;
+  }
+
+  h2 {
+    font-size: 1.55rem;
+    line-height: 1.22;
+  }
+
+  h3 {
+    font-size: 1.18rem;
+    line-height: 1.28;
+  }
+
+  .kicker {
+    margin-bottom: 8px;
+    font-size: 0.74rem;
+    letter-spacing: 0.12em;
+  }
+
+  .lead,
+  .section-text,
+  .media-copy p,
+  .point-list,
+  .summary-list {
+    font-size: 0.96rem;
+  }
+
+  .page-hero-copy h1 + .lead,
+  .section-head h2 + .section-text,
+  .section-head h2 + p {
+    margin-top: 12px;
+  }
+
+  .tag-row {
+    gap: 8px;
+    margin-top: 18px;
+  }
+
+  .tag-row li {
+    padding: 7px 10px;
+    font-size: 0.82rem;
+  }
+
+  .button-link {
+    width: 100%;
+    justify-content: center;
+    padding: 13px 16px;
+    margin-top: 20px;
+  }
+
+  .hero,
+  .page-hero,
+  .section {
+    padding: 22px 0;
+  }
+
+  .section-tight {
+    padding-top: 2px;
+  }
+
+  .hero-home {
+    padding-top: 16px;
+  }
+
+  .hero-image-card {
+    border-radius: 22px;
+  }
+
+  .portal-card,
+  .panel,
+  .media-card,
+  .feature-board,
+  .full-visual-card {
+    border-radius: 20px;
+  }
+
+  .section-head {
+    margin-bottom: 18px;
+  }
+
+  .content-grid,
+  .media-grid,
+  .portal-grid,
+  .doc-grid,
+  .timeline {
+    gap: 16px;
+  }
+
+  .timeline-item {
+    padding: 14px 14px 14px 16px;
+    border-radius: 18px;
+  }
+
+  .media-copy {
+    padding: 18px;
+  }
+
+  .media-card img {
+    aspect-ratio: 4 / 3;
+  }
+
+  .feature-board {
+    gap: 16px;
+  }
+
+  .feature-board-image {
+    border-radius: 16px;
+  }
+
+  .full-visual-stack {
+    width: calc(100% - 12px);
+    gap: 14px;
+    margin-top: 18px;
+  }
+
+  .full-visual-card {
+    padding: 0;
+  }
+
+  .full-visual-card img {
+    max-height: none;
+  }
+
+  .full-visual-card .media-copy {
+    padding: 16px;
+  }
+
+  .kickoff-report {
+    padding-bottom: 30px;
+  }
+
+  .site-footer {
+    padding: 20px 0 28px;
+    font-size: 0.84rem;
   }
 }
