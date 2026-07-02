@@ -178,6 +178,12 @@ img {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
+.report-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+}
+
 .portal-grid-3 {
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
@@ -325,6 +331,31 @@ h3 {
   font-weight: 800;
   color: var(--blue-deep);
   background: #ffffff;
+}
+
+.report-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.subtab {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 16px;
+  border-radius: 999px;
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--blue-deep);
+  background: rgba(255, 255, 255, 0.78);
+  border: 1px solid rgba(20, 61, 120, 0.12);
+}
+
+.subtab.is-active {
+  color: #ffffff;
+  background: linear-gradient(135deg, var(--blue-deep), var(--blue));
+  border-color: transparent;
 }
 
 .impact-list {
@@ -571,6 +602,7 @@ h3 {
   .page-hero-grid,
   .feature-board,
   .portal-grid,
+  .report-grid,
   .content-grid,
   .media-grid,
   .doc-grid {
@@ -643,6 +675,16 @@ h3 {
 
   .year-tabs::-webkit-scrollbar {
     display: none;
+  }
+
+  .report-nav {
+    gap: 8px;
+  }
+
+  .subtab {
+    width: 100%;
+    padding: 11px 14px;
+    font-size: 0.88rem;
   }
 
   .summary-card,
