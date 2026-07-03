@@ -184,6 +184,12 @@ img {
   gap: 24px;
 }
 
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+}
+
 .portal-grid-3 {
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
@@ -427,6 +433,21 @@ h3 {
   border-radius: var(--radius-xl);
 }
 
+.video-card {
+  overflow: hidden;
+  border-radius: var(--radius-xl);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow);
+}
+
+.video-card video {
+  display: block;
+  width: 100%;
+  aspect-ratio: 9 / 16;
+  background: #000;
+}
+
 .section-head-spaced {
   margin-top: 34px;
 }
@@ -605,6 +626,7 @@ h3 {
   .report-grid,
   .content-grid,
   .media-grid,
+  .video-grid,
   .doc-grid {
     grid-template-columns: 1fr;
   }
