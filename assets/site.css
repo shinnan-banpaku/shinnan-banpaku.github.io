@@ -549,6 +549,81 @@ h3 {
   color: rgba(255, 255, 255, 0.9);
 }
 
+.learning-archive {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(260px, 0.65fr);
+  gap: 36px;
+  align-items: center;
+  padding: 38px;
+  overflow: hidden;
+  border-radius: var(--radius-xl);
+  color: #ffffff;
+  background:
+    radial-gradient(circle at 92% 12%, rgba(201, 231, 139, 0.28), transparent 16rem),
+    linear-gradient(135deg, #315f28 0%, #1d6880 58%, #174b82 100%);
+  box-shadow: var(--shadow);
+}
+
+.learning-archive .kicker {
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.learning-archive h2 {
+  max-width: 780px;
+}
+
+.learning-archive-copy > p:not(.kicker) {
+  margin: 18px 0 0;
+  color: rgba(255, 255, 255, 0.88);
+}
+
+.archive-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 24px;
+  padding: 13px 20px;
+  border-radius: 999px;
+  color: var(--blue-deep);
+  background: #ffffff;
+  font-weight: 800;
+}
+
+.archive-link::after {
+  content: "↗";
+  margin-left: 10px;
+  font-size: 1.05em;
+}
+
+.learning-archive-facts {
+  display: grid;
+  gap: 12px;
+}
+
+.learning-archive-facts div {
+  display: grid;
+  grid-template-columns: 92px 1fr;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 16px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(8px);
+}
+
+.learning-archive-facts strong {
+  font-family: "Yu Mincho", "Hiragino Mincho ProN", "MS PMincho", serif;
+  font-size: 1.85rem;
+  line-height: 1;
+}
+
+.learning-archive-facts span {
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
 .media-card figure {
   margin: 0;
 }
@@ -714,6 +789,7 @@ h3 {
   .intro-layout,
   .page-hero-grid,
   .feature-board,
+  .learning-archive,
   .portal-grid,
   .report-grid,
   .content-grid,
@@ -751,6 +827,10 @@ h3 {
 
   .full-visual-card img {
     max-height: 72vh;
+  }
+
+  .learning-archive {
+    gap: 24px;
   }
 }
 
@@ -808,6 +888,7 @@ h3 {
   .media-copy,
   .doc-card,
   .feature-board,
+  .learning-archive,
   .full-visual-card {
     padding: 18px;
   }
@@ -870,6 +951,21 @@ h3 {
     justify-content: center;
     padding: 13px 16px;
     margin-top: 20px;
+  }
+
+  .archive-link {
+    width: 100%;
+    margin-top: 20px;
+    padding: 13px 16px;
+  }
+
+  .learning-archive-facts div {
+    grid-template-columns: 72px 1fr;
+    padding: 13px 14px;
+  }
+
+  .learning-archive-facts strong {
+    font-size: 1.55rem;
   }
 
   .hero,
