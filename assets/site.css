@@ -494,6 +494,45 @@ h3 {
   max-height: none;
 }
 
+.instagram-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+  width: min(calc(100% - 24px), 1480px);
+  margin: 24px auto 0;
+}
+
+.instagram-card {
+  margin: 0;
+  overflow: hidden;
+  border-radius: var(--radius-xl);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow);
+}
+
+.instagram-card img {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  background: #eef3f8;
+}
+
+.instagram-card figcaption {
+  padding: 18px 20px 20px;
+  color: var(--muted);
+}
+
+.instagram-source {
+  margin-top: 28px;
+  text-align: center;
+}
+
+.instagram-source p {
+  margin: 0;
+  color: var(--muted);
+}
+
 .feature-board,
 .message-band {
   background: var(--surface);
@@ -832,6 +871,11 @@ h3 {
   .learning-archive {
     gap: 24px;
   }
+
+  .instagram-gallery {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    width: min(calc(100% - 20px), 1480px);
+  }
 }
 
 @media (max-width: 640px) {
@@ -879,6 +923,16 @@ h3 {
     width: 100%;
     padding: 11px 14px;
     font-size: 0.88rem;
+  }
+
+  .instagram-gallery {
+    grid-template-columns: 1fr;
+    width: min(calc(100% - 20px), 620px);
+    gap: 18px;
+  }
+
+  .instagram-card figcaption {
+    padding: 14px 16px 16px;
   }
 
   .summary-card,
